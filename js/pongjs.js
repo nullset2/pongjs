@@ -87,8 +87,15 @@ function onLoad(){
   function drawScore(){
     context.fillStyle = colors.primary_color;
     context.font = "36px Consolas";
-    context.fillText(game.score_p1, canvas.width/2, canvas.height/3);
-    context.fillText(game.score_p2, canvas.width/2, canvas.height/1.5);
+    context.fillText(game.score_p1, canvas.width/2.1, canvas.height/3);
+    context.fillText(game.score_p2, canvas.width/2.1, canvas.height/1.3);
+  }
+
+  //this draws a message before the game action begins
+  function drawInitialComment(){
+    context.fillStyle = colors.primary_color;
+    context.font = "22px Consolas";
+    context.fillText("Press SPACE to start", 37, canvas.height/1.2)
   }
 
   //this is the main loop of the game, the living and breathing part of the pong engine that we're writing
@@ -101,6 +108,7 @@ function onLoad(){
     drawPanels();
     drawBall();
     drawScore();
+    drawInitialComment();
   }
 
   //come on baby light my fire
