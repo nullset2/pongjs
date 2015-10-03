@@ -64,6 +64,15 @@ function onLoad(){
     context.lineTo(0, 0);
     context.stroke();
   }
+
+  //this function draws the players onscreen --nothing interactive though
+  function drawPanels(){
+    context.fillStyle = colors.primary_color;
+    //player 1
+    context.fillRect(upperPanel.pos_x, 10, upperPanel.width, upperPanel.height);
+    //player 2
+    context.fillRect(upperPanel.pos_x, canvas.height - 20, upperPanel.width, upperPanel.height);
+  }
   
   //this is the main loop of the game, the living and breathing part of the pong engine that we're writing
   function startGame(){
@@ -71,11 +80,11 @@ function onLoad(){
     //startPanels();
     drawBackground();
     drawBorder();
-    //drawPanels();
+    drawPanels();
     //drawBall();
     //drawScore();
   }
 
-  //get the fire going get the fire going
+  //come on baby light my fire
   startGame();
 }
