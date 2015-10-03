@@ -73,16 +73,34 @@ function onLoad(){
     //player 2
     context.fillRect(upperPanel.pos_x, canvas.height - 20, upperPanel.width, upperPanel.height);
   }
-  
+
+  //this function draws the ball element onscreen --nothing interactive either
+  function drawBall(){
+    context.fillStyle = colors.primary_color;
+    context.beginPath();
+    //draw an arc that starts and ends at the same place => circle
+    context.arc(ball.pos_x, ball.pos_y, ball.radius, 0, Math.PI * 2, true);
+    context.fill();
+  }
+
+  //this function updates the scores on the play field
+  function drawScore(){
+    context.fillStyle = colors.primary_color;
+    context.font = "36px Consolas";
+    context.fillText(game.score_p1, canvas.width/2, canvas.height/3);
+    context.fillText(game.score_p2, canvas.width/2, canvas.height/1.5);
+  }
+
   //this is the main loop of the game, the living and breathing part of the pong engine that we're writing
+  //come on you wild heart, go ahead and do your thing, you!
   function startGame(){
     //startBall("Player 1");
     //startPanels();
     drawBackground();
     drawBorder();
     drawPanels();
-    //drawBall();
-    //drawScore();
+    drawBall();
+    drawScore();
   }
 
   //come on baby light my fire
